@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Debugger</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Debug the API Response</h1>
+      <p>
+        You are building a pet adoption app. The app made a request to an API, but the response is broken.
+        Your job is to fix the JSON so the app can show the pets correctly.
+      </p>
+      <p class="muted">
+        This activity helps students practice reading JSON, noticing data type problems, and debugging data the way a
+        developer would in a real workflow.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>What the app expects</h2>
+      <div class="checklist">
+        <p>Each pet in the <strong>pets</strong> array should have these fields:</p>
+        <ul class="schema-list">
+          <li><strong>id</strong>: number</li>
+          <li><strong>name</strong>: string</li>
+          <li><strong>type</strong>: string</li>
+          <li><strong>age</strong>: number</li>
+          <li><strong>vaccinated</strong>: boolean</li>
+          <li><strong>adopted</strong>: boolean</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>API request</h2>
+        <div class="request-line">GET /api/pets</div>
+        <div class="code-box" id="requestBox">Click "Load Broken Response" to inspect the JSON.</div>
+      </div>
+
+      <div class="panel">
+        <h2>Your fix</h2>
+        <textarea id="jsonEditor" spellcheck="false" aria-label="JSON editor"></textarea>
+        <div class="button-row">
+          <button id="loadBtn">Load Broken Response</button>
+          <button id="checkBtn">Check My Fix</button>
+          <button id="hintBtn" class="secondary">Show Hint</button>
+          <button id="resetBtn" class="ghost">Reset</button>
+        </div>
+        <div id="statusBox" class="status"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div id="successBanner" class="success-banner">
+        <strong>Nice work.</strong> Your JSON is valid and matches the schema, so the app can use it.
+      </div>
+      <h2>App preview</h2>
+      <p class="muted">
+        When your data is fixed, the pet cards will appear here.
+      </p>
+      <div id="cards" class="cards"></div>
+      <p class="footer-note">
+        Teacher idea: after students succeed, ask which bug they noticed first and which one was easiest to miss.
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
