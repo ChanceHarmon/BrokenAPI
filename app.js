@@ -35,6 +35,7 @@ function loadBrokenResponse() {
   clearFeedback();
   cards.innerHTML = "";
   successBanner.className = "success-banner";
+  jsonEditor.focus();
 }
 
 function clearFeedback() {
@@ -182,7 +183,6 @@ function checkFix() {
   renderCards(parsed.pets);
 }
 
-document.getElementById("loadBtn").addEventListener("click", loadBrokenResponse);
 document.getElementById("checkBtn").addEventListener("click", checkFix);
 document.getElementById("hintBtn").addEventListener("click", showHint);
 document.getElementById("resetBtn").addEventListener("click", loadBrokenResponse);
