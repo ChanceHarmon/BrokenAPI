@@ -2,14 +2,20 @@
 <html lang="en">
 
 <head>
+  <!-- Basic page metadata and responsive viewport settings -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title shown in the browser tab -->
   <title>API Debugger</title>
+
+  <!-- External stylesheet for layout, colors, and component styling -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <div class="container">
+    <!-- Intro section: establishes the scenario and learning purpose -->
     <section class="hero">
       <h1>Debug the API Response</h1>
       <p>
@@ -22,6 +28,7 @@
       </p>
     </section>
 
+    <!-- Schema reference: shows students the exact data shape the app expects -->
     <section class="panel">
       <h2>What the app expects</h2>
       <div class="checklist">
@@ -37,41 +44,60 @@
       </div>
     </section>
 
+    <!-- Main interactive area:
+         left side shows the broken response,
+         right side lets the student edit and validate it -->
     <section class="grid">
       <div class="panel">
         <h2>API request</h2>
         <div class="request-line">GET /api/pets</div>
+
+        <!-- JavaScript fills this box with the broken JSON on page load -->
         <div class="code-box" id="requestBox"></div>
       </div>
 
       <div class="panel">
         <h2>Your fix</h2>
+
+        <!-- Short instruction placed close to the editing area -->
         <p class="muted">Fix the JSON so each pet matches the expected schema, then click "Validate JSON".</p>
+
+        <!-- Student workspace for editing the JSON response -->
         <textarea id="jsonEditor" spellcheck="false" aria-label="JSON editor"></textarea>
+
+        <!-- Controls for validating, getting a hint, or resetting the activity -->
         <div class="button-row">
           <button id="checkBtn">Validate JSON</button>
           <button id="hintBtn" class="secondary">Show Hint</button>
           <button id="resetBtn" class="ghost">Reload Broken Data</button>
         </div>
+
+        <!-- JavaScript uses this area to show hints, errors, and success messages -->
         <div id="statusBox" class="status"></div>
       </div>
     </section>
 
+    <!-- Result area: displays success state and renders pet cards once the JSON is fixed -->
     <section class="panel">
       <div id="successBanner" class="success-banner">
         <strong>Nice work.</strong> Your JSON is valid and matches the schema, so the app can use it.
       </div>
+
       <h2>App preview</h2>
       <p class="muted">
         When your data is fixed, the pet cards will appear here.
       </p>
+
+      <!-- JavaScript renders the corrected pet data here as cards -->
       <div id="cards" class="cards"></div>
+
       <p class="footer-note">
         Teacher idea: after students succeed, ask which bug they noticed first and which one was easiest to miss.
       </p>
     </section>
   </div>
 
+  <!-- External JavaScript file that powers the interaction and validation -->
   <script src="app.js"></script>
 </body>
 

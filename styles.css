@@ -1,3 +1,4 @@
+/* Global design tokens (colors, etc.) */
 :root {
   --bg: #f6f8fb;
   --panel: #ffffff;
@@ -13,10 +14,12 @@
   --accent: #2563eb;
 }
 
+/* More predictable sizing behavior across elements */
 * {
   box-sizing: border-box;
 }
 
+/* Base page styling */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -25,12 +28,14 @@ body {
   line-height: 1.5;
 }
 
+/* Main layout container */
 .container {
   max-width: 1050px;
   margin: 0 auto;
   padding: 24px;
 }
 
+/* Shared panel styling for consistent card-like sections */
 .hero,
 .panel {
   background: var(--panel);
@@ -40,6 +45,7 @@ body {
   margin-bottom: 18px;
 }
 
+/* Basic typography cleanup */
 h1,
 h2,
 h3 {
@@ -50,22 +56,26 @@ p {
   margin: 0 0 12px;
 }
 
+/* Secondary/muted text for instructions or descriptions */
 .muted {
   color: var(--muted);
 }
 
+/* Two-column layout for main interaction area */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 18px;
 }
 
+/* Responsive: stack columns on smaller screens */
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
   }
 }
 
+/* Code display area for API response */
 .code-box {
   background: #0f172a;
   color: #e2e8f0;
@@ -78,6 +88,7 @@ p {
   min-height: 120px;
 }
 
+/* Editable JSON input area */
 textarea {
   width: 100%;
   min-height: 320px;
@@ -92,6 +103,7 @@ textarea {
   background: #fcfdff;
 }
 
+/* Button layout */
 .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -99,6 +111,7 @@ textarea {
   margin-top: 14px;
 }
 
+/* Primary button style */
 button {
   border: none;
   border-radius: 10px;
@@ -109,6 +122,7 @@ button {
   color: white;
 }
 
+/* Secondary and less prominent button styles */
 button.secondary {
   background: #475569;
 }
@@ -118,6 +132,7 @@ button.ghost {
   color: #111827;
 }
 
+/* Status message container (hidden by default) */
 .status {
   margin-top: 14px;
   padding: 12px 14px;
@@ -126,6 +141,7 @@ button.ghost {
   display: none;
 }
 
+/* Different states for feedback messages */
 .status.good {
   display: block;
   background: var(--good-bg);
@@ -144,6 +160,7 @@ button.ghost {
   border-color: var(--hint-border);
 }
 
+/* List spacing adjustments */
 ul {
   margin-top: 8px;
   margin-bottom: 0;
@@ -155,6 +172,7 @@ ul {
   padding-left: 20px;
 }
 
+/* Styling for the API request label */
 .request-line {
   display: inline-block;
   background: #eff6ff;
@@ -167,6 +185,7 @@ ul {
   margin-bottom: 12px;
 }
 
+/* Grid layout for rendered pet cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -174,6 +193,7 @@ ul {
   margin-top: 14px;
 }
 
+/* Individual card styling */
 .card {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -181,6 +201,7 @@ ul {
   padding: 14px;
 }
 
+/* Small label/tag styling */
 .tag {
   display: inline-block;
   margin-top: 8px;
@@ -191,6 +212,7 @@ ul {
   color: #3730a3;
 }
 
+/* Schema checklist styling */
 .checklist {
   background: #f8fafc;
   border: 1px solid var(--border);
@@ -198,12 +220,14 @@ ul {
   padding: 14px;
 }
 
+/* Footer/helper text */
 .footer-note {
   font-size: 13px;
   color: var(--muted);
   margin-top: 10px;
 }
 
+/* Success banner (hidden until activated) */
 .success-banner {
   background: #ecfdf3;
   border: 1px solid var(--good-border);
@@ -213,6 +237,7 @@ ul {
   display: none;
 }
 
+/* Show success banner when active */
 .success-banner.show {
   display: block;
 }
